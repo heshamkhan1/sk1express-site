@@ -120,21 +120,26 @@
             </div>
         </section>
 
-        <!-- Quote Routing / Contact Section -->
         <section id="contact" class="max-w-4xl mx-auto py-12 pb-24 px-6">
             <div class="bg-slate-900 border border-slate-800 p-8 md:p-12 rounded-sm shadow-xl">
                 <h2 class="text-3xl font-black text-white mb-2 tracking-tight uppercase">Initiate Urgent Transit</h2>
                 <p class="text-slate-400 mb-8">For an immediate rate structure and vehicle allocation, enter your deployment details below.</p>
                 
                 <form class="space-y-6" id="quoteForm">
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" id="sk1_bot_trap" tabindex="-1" value="" autocomplete="off" />
+                    </div>
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs uppercase tracking-wider font-bold text-slate-400 mb-2">Collection Postcode</label>
-                            <input type="text" id="collection" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-sm font-semibold text-white focus:outline-none focus:border-orange-500 transition" placeholder="e.g. M1 1AA" required />
+                            <input type="text" id="collection" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-sm font-semibold text-white focus:outline-none focus:border-orange-500 transition" placeholder="e.g. M1 1AA" required maxlength="8" />
+                            <p id="col-error" class="text-red-500 text-xs mt-1 hidden">Invalid UK Postcode</p>
                         </div>
                         <div>
                             <label class="block text-xs uppercase tracking-wider font-bold text-slate-400 mb-2">Delivery Postcode</label>
-                            <input type="text" id="delivery" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-sm font-semibold text-white focus:outline-none focus:border-orange-500 transition" placeholder="e.g. EC1A 1BB" required />
+                            <input type="text" id="delivery" class="w-full bg-slate-950 border border-slate-800 p-4 rounded-sm font-semibold text-white focus:outline-none focus:border-orange-500 transition" placeholder="e.g. EC1A 1BB" required maxlength="8" />
+                            <p id="del-error" class="text-red-500 text-xs mt-1 hidden">Invalid UK Postcode</p>
                         </div>
                     </div>
                     <div>
@@ -147,31 +152,58 @@
         </section>
 
         <script is:inline>
+            // UK Postcode Auto-Formatter
+            const formatPostcode = (val) => {
+                let v = val.toUpperCase().replace(/[^A-Z0-9]/g, '');
+                if (v.length > 4) v = v.slice(0, -3) + ' ' + v.slice(-3);
+                return v;
+            };
+
+            // Strict UK Postcode Regex Validator
+            const isValidPostcode = (p) => /^[A-Z]{1,2}[0-9][A-Z0-9]? ?[0-9][A-Z]{2}$/i.test(p);
+
+            // Apply formatting on input
+            ['collection', 'delivery'].forEach(id => {
+                document.getElementById(id).addEventListener('input', (e) => {
+                    e.target.value = formatPostcode(e.target.value);
+                    document.getElementById(`${id.substring(0,3)}-error`).classList.add('hidden');
+                });
+            });
+
             document.getElementById('quoteForm').addEventListener('submit', async (e) => {
                 e.preventDefault();
+                
+                const col = document.getElementById('collection').value;
+                const del = document.getElementById('delivery').value;
+                let hasError = false;
+
+                if (!isValidPostcode(col)) { document.getElementById('col-error').classList.remove('hidden'); hasError = true; }
+                if (!isValidPostcode(del)) { document.getElementById('del-error').classList.remove('hidden'); hasError = true; }
+                if (hasError) return;
+
                 const btn = document.getElementById('submitBtn');
                 btn.disabled = true;
-                btn.innerText = 'Sending...';
+                btn.innerText = 'Transmitting...';
 
                 const payload = {
-                    collection: document.getElementById('collection').value,
-                    delivery: document.getElementById('delivery').value,
-                    cargo: document.getElementById('cargo').value
+                    collection: col,
+                    delivery: del,
+                    cargo: document.getElementById('cargo').value,
+                    trap: document.getElementById('sk1_bot_trap').value // Send honeypot data
                 };
 
                 try {
-                    // REPLACE THIS URL WITH YOUR LIVE CLOUDFLARE WORKER URL FROM STEP 3
-                    const response = await fetch('https://sk1-form-handler.heshamkhan.workers.dev/', {
+                    const response = await fetch('https://api.sk1express.uk', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
                     });
 
                     if (response.ok) {
-                        alert('Quote request sent successfully! Our dispatch team will contact you shortly.');
+                        alert('Transit request logged. Dispatch will contact you immediately.');
                         document.getElementById('quoteForm').reset();
                     } else {
-                        alert('Operational error. Please call dispatch directly.');
+                        alert('Routing error. Please call dispatch directly.');
                     }
                 } catch (err) {
                     alert('Network error. Please call dispatch directly.');
