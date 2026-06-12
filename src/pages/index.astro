@@ -1,13 +1,13 @@
 ---
-// Standalone landing page. No default Astro blog components imported to prevent CSS conflicts.
+// Production landing page aligned with standard UK B2B courier layouts
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK1 Express | Dedicated Same Day Delivery UK</title>
-    <meta name="description" content="Dedicated same-day courier service based in Manchester. Direct, B2B transport with no transhipments and complete control over time and route.">
+    <title>SK1 Express | Nationwide Same Day Couriers</title>
+    <meta name="description" content="Professional same day courier services based in Manchester. Dedicated vehicles, real-time tracking, and nationwide coverage.">
     
     <script is:inline src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -15,134 +15,161 @@
         body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     </style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-900">
+<body class="bg-slate-50 font-sans text-slate-800">
 
-    <header class="w-full bg-white text-slate-900 py-5 px-6 md:px-12 flex justify-between items-center border-b border-slate-200 sticky top-0 z-50">
-        <a href="/" class="text-2xl font-black tracking-tight hover:text-orange-600 transition">SK1<span class="text-orange-600">EXPRESS</span></a>
-        <nav class="hidden md:flex gap-8 text-sm uppercase tracking-wider font-bold">
-            <a href="#services" class="hover:text-orange-600 transition text-slate-600">Services</a>
-            <a href="#fleet" class="hover:text-orange-600 transition text-slate-600">Our Fleet</a>
-            <a href="#why-us" class="hover:text-orange-600 transition text-slate-600">Why Us</a>
+    <!-- Top Contact Bar -->
+    <div class="bg-slate-900 text-slate-300 text-xs md:text-sm py-2 px-6 flex justify-between items-center">
+        <div class="flex gap-4">
+            <span>Email: dispatch@sk1express.uk</span>
+        </div>
+        <div class="flex gap-4 font-bold text-white">
+            <span>24/7 Operations</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="w-full bg-white py-4 px-6 md:px-12 flex justify-between items-center border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <a href="/" class="text-3xl font-black tracking-tighter text-slate-900">SK1<span class="text-orange-600">EXPRESS</span></a>
+        <nav class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wide text-slate-600">
+            <a href="#services" class="hover:text-orange-600 transition">Services</a>
+            <a href="#fleet" class="hover:text-orange-600 transition">Our Fleet</a>
+            <a href="#about" class="hover:text-orange-600 transition">About Us</a>
         </nav>
-        <a href="tel:+440000000000" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 font-bold uppercase text-sm tracking-wide transition">24/7 Dispatch</a>
+        <a href="tel:+440000000000" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2.5 font-bold uppercase text-sm tracking-wide transition rounded-sm">Call Dispatch</a>
     </header>
 
     <main>
-        <section id="services" class="relative max-w-7xl mx-auto py-20 md:py-32 px-6">
-            <div class="max-w-3xl">
-                <span class="text-orange-600 uppercase tracking-widest font-extrabold text-sm mb-4 block">B2B Logistics Partner</span>
-                <h1 class="text-5xl md:text-7xl font-black text-slate-900 mb-6 leading-tight tracking-tight">One vehicle.<br/>One job.<br/><span class="text-orange-600">Full responsibility.</span></h1>
-                <p class="text-xl text-slate-600 mb-10 leading-relaxed font-medium">
-                    We deliver dedicated, direct B2B transport with no transhipments and complete control over time and route. Your package travels in a vehicle assigned exclusively to your job. 
-                </p>
-                <div class="flex flex-wrap gap-4 mb-20">
-                    <a href="#contact" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 font-bold text-lg transition uppercase tracking-wide">Get an Instant Quote</a>
-                    <a href="#fleet" class="bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 px-8 py-4 font-bold text-lg transition uppercase tracking-wide">View Fleet Capabilities</a>
+        <!-- Split Hero & Quote Form Section -->
+        <section class="bg-slate-900 text-white py-12 md:py-20 px-6 relative border-b-8 border-orange-600">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-black mb-6 leading-tight">Dedicated Same Day Couriers in Manchester & Nationwide.</h1>
+                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                        When tomorrow is too late. We provide rapid-response dedicated vehicles for urgent, time-critical freight across the UK. Tracked from collection to delivery.
+                    </p>
+                    <ul class="space-y-3 font-bold text-slate-200 mb-8">
+                        <li class="flex items-center gap-3"><span class="text-orange-500">✓</span> Collection within 60 minutes nationwide</li>
+                        <li class="flex items-center gap-3"><span class="text-orange-500">✓</span> Goods in Transit Insured up to £50,000</li>
+                        <li class="flex items-center gap-3"><span class="text-orange-500">✓</span> Instant electronic Proof of Delivery (ePOD)</li>
+                        <li class="flex items-center gap-3"><span class="text-orange-500">✓</span> Direct A-to-B delivery (No co-loading)</li>
+                    </ul>
                 </div>
+
+                <!-- Instant Quote Form -->
+                <div class="bg-white p-6 md:p-8 shadow-2xl rounded-sm text-slate-900">
+                    <h2 class="text-2xl font-black mb-1 uppercase tracking-tight">Request a Quote</h2>
+                    <p class="text-sm text-slate-500 mb-6 font-medium">Enter your consignment details for an immediate response.</p>
+                    
+                    <form class="space-y-4" id="quoteForm">
+                        <!-- Anti-Spam Honeypot -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" id="sk1_bot_trap" tabindex="-1" value="" autocomplete="off" />
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1 uppercase">Collection Postcode</label>
+                                <input type="text" id="collection" class="w-full bg-slate-50 border border-slate-300 p-3 font-bold focus:outline-none focus:border-orange-600 transition" placeholder="e.g. M1 1AA" required maxlength="8" />
+                                <p id="col-error" class="text-red-600 text-xs mt-1 hidden font-bold">Invalid Postcode</p>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1 uppercase">Delivery Postcode</label>
+                                <input type="text" id="delivery" class="w-full bg-slate-50 border border-slate-300 p-3 font-bold focus:outline-none focus:border-orange-600 transition" placeholder="e.g. EC1A 1BB" required maxlength="8" />
+                                <p id="del-error" class="text-red-600 text-xs mt-1 hidden font-bold">Invalid Postcode</p>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1 uppercase">Consignment Details (Weight & Dimensions)</label>
+                            <textarea id="cargo" class="w-full bg-slate-50 border border-slate-300 p-3 font-bold focus:outline-none focus:border-orange-600 transition h-20" placeholder="e.g. 1 standard pallet, 300kg" required></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-black py-4 transition text-lg uppercase tracking-wide rounded-sm">Get Pricing</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Core Services Grid -->
+        <section id="services" class="max-w-7xl mx-auto py-20 px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black text-slate-900 tracking-tight uppercase">Our Services</h2>
+                <div class="w-16 h-1 bg-orange-600 mx-auto mt-4"></div>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-slate-200 pt-16">
-                <div class="bg-white border border-slate-200 p-8 shadow-sm">
-                    <p class="text-4xl font-black text-orange-600 mb-2">60 Min</p>
-                    <p class="text-slate-900 font-bold text-sm uppercase tracking-wider">Average Pickup Time</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Same Day Courier</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Urgent, dedicated transport for your time-critical goods. We collect within 60 minutes and drive directly to the delivery point with no diversions.</p>
                 </div>
-                <div class="bg-white border border-slate-200 p-8 shadow-sm">
-                    <p class="text-4xl font-black text-slate-900 mb-2">99.8%</p>
-                    <p class="text-slate-900 font-bold text-sm uppercase tracking-wider">On-Time Delivery</p>
+                <div class="bg-white p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Wait & Return</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Ideal for secure documents or components that require signing, processing, and returning immediately on the same dedicated vehicle.</p>
                 </div>
-                <div class="bg-white border border-slate-200 p-8 shadow-sm">
-                    <p class="text-4xl font-black text-slate-900 mb-2">24 / 7</p>
-                    <p class="text-slate-900 font-bold text-sm uppercase tracking-wider">Service Availability</p>
-                </div>
-                <div class="bg-white border border-slate-200 p-8 shadow-sm">
-                    <p class="text-4xl font-black text-orange-600 mb-2">100%</p>
-                    <p class="text-slate-900 font-bold text-sm uppercase tracking-wider">UK Coverage</p>
+                <div class="bg-white p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Scheduled Contracts</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Regular daily or weekly runs for businesses requiring dependable, recurring logistics support across the North West and beyond.</p>
                 </div>
             </div>
         </section>
 
-        <section id="fleet" class="bg-white border-y border-slate-200 py-24 px-6">
+        <!-- Fleet / Vehicle Specifications -->
+        <section id="fleet" class="bg-slate-100 border-y border-slate-200 py-20 px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="mb-16">
-                    <span class="text-orange-600 uppercase tracking-widest font-extrabold text-sm block mb-2">Vehicles</span>
-                    <h2 class="text-4xl font-black text-slate-900 tracking-tight">Dedicated Same Day Fleet</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-black text-slate-900 tracking-tight uppercase">Vehicle Capabilities</h2>
+                    <div class="w-16 h-1 bg-orange-600 mx-auto mt-4"></div>
+                    <p class="mt-4 text-slate-600 font-medium">A diverse fleet to handle everything from legal documents to heavy industrial pallets.</p>
                 </div>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-slate-50 p-8 border border-slate-200">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Small Van</h3>
-                        <p class="text-slate-600 text-sm mb-6">Up to 450kg. Fast and agile for urban deliveries with easy parking access.</p>
+                    <!-- Small Van -->
+                    <div class="bg-white border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-1 border-b border-slate-100 pb-2">Small Van</h3>
+                        <ul class="text-sm text-slate-600 space-y-2 mt-4 font-medium">
+                            <li><strong class="text-slate-900">Max Payload:</strong> 400kg</li>
+                            <li><strong class="text-slate-900">Pallet Capacity:</strong> 1 Standard</li>
+                            <li><strong class="text-slate-900">Internal Length:</strong> 1.5m</li>
+                            <li><strong class="text-slate-900">Ideal for:</strong> Parcels, boxes, urgent documents.</li>
+                        </ul>
                     </div>
-                    <div class="bg-slate-50 p-8 border border-slate-200">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">SWB Van</h3>
-                        <p class="text-slate-600 text-sm mb-6">Up to 800kg. Versatile short wheel base van for medium loads.</p>
+                    <!-- SWB -->
+                    <div class="bg-white border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-1 border-b border-slate-100 pb-2">Medium Van (SWB)</h3>
+                        <ul class="text-sm text-slate-600 space-y-2 mt-4 font-medium">
+                            <li><strong class="text-slate-900">Max Payload:</strong> 900kg</li>
+                            <li><strong class="text-slate-900">Pallet Capacity:</strong> 2 Standard</li>
+                            <li><strong class="text-slate-900">Internal Length:</strong> 2.4m</li>
+                            <li><strong class="text-slate-900">Ideal for:</strong> Medium freight, multiple boxes.</li>
+                        </ul>
                     </div>
-                    <div class="bg-slate-50 p-8 border border-slate-200">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">LWB Van</h3>
-                        <p class="text-slate-600 text-sm mb-6">Up to 1,000kg. Extended capacity for larger consignments.</p>
+                    <!-- LWB -->
+                    <div class="bg-white border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-1 border-b border-slate-100 pb-2">Large Van (LWB)</h3>
+                        <ul class="text-sm text-slate-600 space-y-2 mt-4 font-medium">
+                            <li><strong class="text-slate-900">Max Payload:</strong> 1,100kg</li>
+                            <li><strong class="text-slate-900">Pallet Capacity:</strong> 3-4 Standard</li>
+                            <li><strong class="text-slate-900">Internal Length:</strong> 3.3m</li>
+                            <li><strong class="text-slate-900">Ideal for:</strong> Bulky goods, long lengths.</li>
+                        </ul>
                     </div>
-                    <div class="bg-slate-50 p-8 border border-slate-200">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Luton Van</h3>
-                        <p class="text-slate-600 text-sm mb-6">Up to 1,000kg. High-volume capability with tail lift available.</p>
+                    <!-- Luton -->
+                    <div class="bg-white border border-slate-200 p-6">
+                        <h3 class="text-lg font-black text-slate-900 mb-1 border-b border-slate-100 pb-2">Luton Tail-Lift</h3>
+                        <ul class="text-sm text-slate-600 space-y-2 mt-4 font-medium">
+                            <li><strong class="text-slate-900">Max Payload:</strong> 1,000kg</li>
+                            <li><strong class="text-slate-900">Pallet Capacity:</strong> 6 Standard</li>
+                            <li><strong class="text-slate-900">Internal Length:</strong> 4.0m</li>
+                            <li><strong class="text-slate-900">Ideal for:</strong> Heavy machinery, palletized loads.</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <section id="why-us" class="max-w-7xl mx-auto py-24 px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="text-orange-600 uppercase tracking-widest font-extrabold text-sm block mb-2">Direct Delivery</span>
-                    <h2 class="text-4xl font-black text-slate-900 mb-6 tracking-tight">No hubs, no transfers, no delays.</h2>
-                    <p class="text-slate-600 leading-relaxed mb-6 font-medium">
-                        Your shipment travels alone in a vehicle assigned exclusively to your delivery. From your door to the destination without passing through depots or sorting centres. 
-                    </p>
-                </div>
-                <div class="space-y-6">
-                    <div class="bg-white border border-slate-200 p-8 shadow-sm">
-                        <h4 class="font-bold text-slate-900 mb-2 text-lg">Real-Time GPS Tracking</h4>
-                        <p class="text-slate-600 text-sm">Know exactly where your package is at all times. Live GPS tracking and instant updates.</p>
-                    </div>
-                    <div class="bg-white border border-slate-200 p-8 shadow-sm">
-                        <h4 class="font-bold text-slate-900 mb-2 text-lg">Instant Proof of Delivery</h4>
-                        <p class="text-slate-600 text-sm">Receive proof of delivery immediately after your shipment is delivered.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="bg-slate-900 py-24 px-6">
-            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 shadow-2xl">
-                <h2 class="text-3xl font-black text-slate-900 mb-2 tracking-tight uppercase">Get an Instant Quote</h2>
-                <p class="text-slate-600 mb-8 font-medium">For an immediate rate structure and vehicle allocation, enter your deployment details below.</p>
-                
-                <form class="space-y-6" id="quoteForm">
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                        <input type="text" id="sk1_bot_trap" tabindex="-1" value="" autocomplete="off" />
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider font-bold text-slate-600 mb-2">Collection Postcode</label>
-                            <input type="text" id="collection" class="w-full bg-slate-50 border border-slate-300 p-4 font-bold text-slate-900 focus:outline-none focus:border-orange-600 transition" placeholder="e.g. M1 1AA" required maxlength="8" />
-                            <p id="col-error" class="text-red-600 text-xs mt-1 hidden font-bold">Invalid UK Postcode</p>
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider font-bold text-slate-600 mb-2">Delivery Postcode</label>
-                            <input type="text" id="delivery" class="w-full bg-slate-50 border border-slate-300 p-4 font-bold text-slate-900 focus:outline-none focus:border-orange-600 transition" placeholder="e.g. EC1A 1BB" required maxlength="8" />
-                            <p id="del-error" class="text-red-600 text-xs mt-1 hidden font-bold">Invalid UK Postcode</p>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs uppercase tracking-wider font-bold text-slate-600 mb-2">Cargo Description / Payload Weight</label>
-                        <textarea id="cargo" class="w-full bg-slate-50 border border-slate-300 p-4 font-bold text-slate-900 focus:outline-none focus:border-orange-600 transition h-28" placeholder="e.g. 2 x Euro-pallets, industrial pump component, 450kg total" required></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 transition text-lg uppercase tracking-wide">Submit Request for Pricing</button>
-                </form>
             </div>
         </section>
 
         <script is:inline>
+            // Form Validation and Submission Logic
             const formatPostcode = (val) => {
                 let v = val.toUpperCase().replace(/[^A-Z0-9]/g, '');
                 if (v.length > 4) v = v.slice(0, -3) + ' ' + v.slice(-3);
@@ -171,7 +198,7 @@
 
                 const btn = document.getElementById('submitBtn');
                 btn.disabled = true;
-                btn.innerText = 'Transmitting...';
+                btn.innerText = 'Sending...';
 
                 const payload = {
                     collection: col,
@@ -188,23 +215,48 @@
                     });
 
                     if (response.ok) {
-                        alert('Transit request logged. Dispatch will contact you immediately.');
+                        alert('Quote request received successfully. Our team will contact you shortly.');
                         document.getElementById('quoteForm').reset();
                     } else {
-                        alert('Routing error. Please call dispatch directly.');
+                        alert('Server error. Please call us directly for a quote.');
                     }
                 } catch (err) {
-                    alert('Network error. Please call dispatch directly.');
+                    alert('Network error. Please call us directly for a quote.');
                 } finally {
                     btn.disabled = false;
-                    btn.innerText = 'Submit Request for Pricing';
+                    btn.innerText = 'Get Pricing';
                 }
             });
         </script>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-12 px-6 text-center text-xs tracking-wider text-slate-500 uppercase font-bold">
-        <p>&copy; 2026 SK1 Express. All rights reserved. | Headquartered in Manchester.</p>
+    <!-- Standard Corporate Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 border-t-4 border-orange-600">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 mb-8 border-b border-slate-800 pb-8">
+            <div>
+                <h4 class="text-white font-black text-xl mb-4">SK1 EXPRESS</h4>
+                <p class="text-sm leading-relaxed">Your trusted partner for dedicated same day courier services. Operating from Manchester to anywhere in the UK.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact Details</h4>
+                <ul class="text-sm space-y-2">
+                    <li>Call: 0161 000 0000</li>
+                    <li>Email: dispatch@sk1express.uk</li>
+                    <li>Available 24 hours a day, 7 days a week.</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
+                <ul class="text-sm space-y-2">
+                    <li><a href="#services" class="hover:text-orange-500 transition">Our Services</a></li>
+                    <li><a href="#fleet" class="hover:text-orange-500 transition">Vehicle Guide</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-xs text-center">
+            <p>&copy; 2026 SK1 Express. All rights reserved. Registered in England & Wales.</p>
+        </div>
     </footer>
 </body>
 </html>
