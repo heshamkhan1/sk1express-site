@@ -1,5 +1,5 @@
 ---
-// Full-scale production landing page for SK1 Express
+// Standalone landing page. No default Astro blog components imported to prevent CSS conflicts.
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +9,8 @@
     <title>SK1 Express | Dedicated Same Day Delivery UK</title>
     <meta name="description" content="Dedicated same-day courier service based in Manchester. Direct, B2B transport with no transhipments and complete control over time and route.">
     
-    <!-- Core UI Engine -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Core UI Engine (is:inline forces Astro to load this script) -->
+    <script is:inline src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
     </style>
