@@ -1,13 +1,12 @@
 ---
-// SK1 Express Ltd | B2B Logistics Landing Page
-// Original architecture, fully responsive, Birmingham-centric.
+// SK1 Express Ltd | Premium B2B Logistics Landing Page
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK1 Express | Dedicated Same Day Couriers Birmingham</title>
+    <title>SK1 Express Ltd | Dedicated Same Day Couriers Birmingham</title>
     <meta name="description" content="Birmingham's premier dedicated same day courier service. Direct B2B logistics, zero transhipments, and nationwide delivery.">
     
     <script is:inline src="https://cdn.tailwindcss.com"></script>
@@ -17,10 +16,10 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0f172a', // Slate 900
-                            light: '#f8fafc', // Slate 50
-                            accent: '#ea580c', // Orange 600
-                            accentHover: '#c2410c' // Orange 700
+                            dark: '#09090b', // Zinc 950 (Deepest Charcoal)
+                            light: '#fafafa', // Zinc 50 (Crisp White)
+                            accent: '#2563eb', // Royal Blue 600
+                            accentHover: '#1d4ed8' // Royal Blue 700
                         }
                     },
                     fontFamily: {
@@ -32,29 +31,26 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        /* Custom scrollbar for a premium feel */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #ea580c; }
-        
-        /* Native Accordion Styling */
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 4px;}
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-accent selection:text-white">
+<body class="bg-brand-light text-gray-800 antialiased selection:bg-brand-accent selection:text-white">
 
     <!-- Mobile-Optimized Header -->
-    <header class="fixed w-full bg-brand-dark/95 backdrop-blur-md border-b border-slate-800 z-50 transition-all">
+    <header class="fixed w-full bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 z-50 transition-all shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <a href="/" class="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase">
-                    SK1<span class="text-brand-accent">Express</span>
+                <a href="/" class="text-2xl md:text-3xl font-black text-white tracking-tight">
+                    sk1express <span class="text-brand-accent font-bold text-lg">Ltd</span>
                 </a>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden md:flex gap-8 text-sm font-bold text-slate-300 uppercase tracking-wide">
+                <nav class="hidden md:flex gap-8 text-sm font-semibold text-gray-300 uppercase tracking-wide">
                     <a href="#solutions" class="hover:text-white transition-colors">Solutions</a>
                     <a href="#industries" class="hover:text-white transition-colors">Industries</a>
                     <a href="#fleet" class="hover:text-white transition-colors">Fleet Specs</a>
@@ -63,55 +59,54 @@
 
                 <!-- CTA & Mobile Toggle -->
                 <div class="flex items-center gap-4">
-                    <a href="#quote" class="hidden sm:inline-flex bg-brand-accent hover:bg-brand-accentHover text-white px-6 py-2.5 rounded-sm font-bold uppercase text-sm tracking-wider transition-colors">
+                    <a href="#quote" class="hidden sm:inline-flex bg-brand-accent hover:bg-brand-accentHover text-white px-6 py-2.5 rounded-lg font-bold uppercase text-sm tracking-wider transition-all shadow-lg shadow-brand-accent/20">
                         Urgent Quote
                     </a>
                     <button id="mobile-menu-btn" class="md:hidden text-white p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
                 </div>
             </div>
         </div>
         
         <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-slate-800">
-            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col font-bold text-slate-300 uppercase tracking-wide">
-                <a href="#solutions" class="block py-3 border-b border-slate-800">Solutions</a>
-                <a href="#industries" class="block py-3 border-b border-slate-800">Industries</a>
-                <a href="#fleet" class="block py-3 border-b border-slate-800">Fleet Specs</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col font-bold text-gray-300 uppercase tracking-wide text-sm">
+                <a href="#solutions" class="block py-3 border-b border-gray-800">Solutions</a>
+                <a href="#industries" class="block py-3 border-b border-gray-800">Industries</a>
+                <a href="#fleet" class="block py-3 border-b border-gray-800">Fleet Specs</a>
                 <a href="#quote" class="block py-3 text-brand-accent">Get a Quote</a>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Full Bleed Hero Section with Auto-Adjusting Background -->
+        <!-- Full Bleed Hero Section -->
         <section class="relative min-h-[90vh] flex items-center pt-20">
-            <!-- Fluid Image Placeholder -->
             <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=2070&auto=format&fit=crop" alt="Birmingham Logistics Hub" class="w-full h-full object-cover object-center" />
-                <div class="absolute inset-0 bg-brand-dark/80 mix-blend-multiply"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+                <div class="absolute inset-0 bg-brand-dark/85 mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
             </div>
 
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="max-w-3xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-accent/20 border border-brand-accent/50 text-brand-accent font-bold text-xs uppercase tracking-widest mb-6 rounded-sm">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-accent/10 border border-brand-accent/30 text-brand-accent font-bold text-xs uppercase tracking-widest mb-6 rounded-full backdrop-blur-sm">
                         <span class="w-2 h-2 bg-brand-accent rounded-full animate-pulse"></span>
-                        Birmingham Operations Active
+                        24/7 Dispatch Operations
                     </div>
                     <h1 class="text-5xl sm:text-6xl md:text-7xl font-black text-white leading-[1.1] tracking-tight mb-6">
-                        Mission-Critical <br />
-                        B2B Logistics.
+                        Dedicated Same Day <br />
+                        <span class="text-brand-accent">Delivery.</span>
                     </h1>
-                    <p class="text-lg sm:text-xl text-slate-300 mb-10 font-medium leading-relaxed max-w-2xl">
-                        When standard couriers fail, we deliver. Operating out of the West Midlands, providing dedicated, zero-transhipment transport directly to your destination. 
+                    <p class="text-lg sm:text-xl text-gray-300 mb-10 font-medium leading-relaxed max-w-2xl">
+                        When standard couriers fail, we deliver. Operating out of Birmingham, providing direct B2B transport with zero transhipments to any UK mainland destination. 
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#quote" class="bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 text-center font-bold uppercase tracking-wider text-lg rounded-sm transition-all shadow-lg">
-                            Initiate Transport
+                        <a href="#quote" class="bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-4 text-center font-bold uppercase tracking-wider text-lg rounded-xl transition-all shadow-lg shadow-brand-accent/20">
+                            Get an Instant Quote
                         </a>
-                        <a href="tel:+441210000000" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-center font-bold uppercase tracking-wider text-lg rounded-sm transition-all backdrop-blur-sm">
+                        <a href="tel:+441210000000" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-center font-bold uppercase tracking-wider text-lg rounded-xl transition-all backdrop-blur-sm">
                             Call 0121 000 0000
                         </a>
                     </div>
@@ -119,139 +114,94 @@
             </div>
         </section>
 
-        <!-- Floating Data Bar -->
-        <section class="relative z-20 -mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white border border-slate-200 shadow-2xl rounded-sm p-8 flex flex-col md:flex-row justify-between items-center gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-                <div class="w-full text-center md:px-4">
-                    <div class="text-4xl font-black text-brand-dark mb-1">60<span class="text-brand-accent">m</span></div>
-                    <div class="text-sm font-bold text-slate-500 uppercase tracking-wide">Target Collection</div>
-                </div>
-                <div class="w-full text-center md:px-4 pt-8 md:pt-0">
-                    <div class="text-4xl font-black text-brand-dark mb-1">24<span class="text-brand-accent">/7</span></div>
-                    <div class="text-sm font-bold text-slate-500 uppercase tracking-wide">Dispatch Operations</div>
-                </div>
-                <div class="w-full text-center md:px-4 pt-8 md:pt-0">
-                    <div class="text-4xl font-black text-brand-dark mb-1">£50<span class="text-brand-accent">k</span></div>
-                    <div class="text-sm font-bold text-slate-500 uppercase tracking-wide">Transit Insurance</div>
-                </div>
-            </div>
-        </section>
-
         <!-- Core Solutions (Staggered Layout) -->
-        <section id="solutions" class="py-24 overflow-hidden">
+        <section id="solutions" class="py-24 bg-white overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-16 md:mb-24">
+                <div class="mb-16 md:mb-24 text-center max-w-3xl mx-auto">
+                    <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">Our Methodology</span>
                     <h2 class="text-3xl md:text-5xl font-black text-brand-dark tracking-tight">The Dedicated Difference.</h2>
-                    <div class="w-20 h-2 bg-brand-accent mt-6"></div>
                 </div>
 
                 <!-- Feature 1 -->
-                <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
                     <div class="order-2 md:order-1">
-                        <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">Direct Transport</span>
+                        <div class="w-12 h-12 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
                         <h3 class="text-3xl font-bold text-brand-dark mb-4">Zero Transhipments. Zero Risk.</h3>
-                        <p class="text-slate-600 leading-relaxed text-lg mb-6">Standard networks push your cargo through automated hubs, swapping vehicles and increasing the risk of loss or damage. We eliminate the network. Your freight is loaded onto a dedicated vehicle in Birmingham and driven directly to the receiver.</p>
-                        <ul class="space-y-3 font-medium text-brand-dark">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Exclusive use of the vehicle</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> No co-loading with other freight</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Direct point-to-point routing</li>
+                        <p class="text-gray-600 leading-relaxed text-lg mb-6">Standard networks push your cargo through automated hubs, swapping vehicles and increasing the risk of loss or damage. We eliminate the network entirely. Your freight is loaded onto a dedicated vehicle in Birmingham and driven directly to the receiver.</p>
+                        <ul class="space-y-4 font-medium text-brand-dark">
+                            <li class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Exclusive use of the vehicle</li>
+                            <li class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> No co-loading with other freight</li>
+                            <li class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Direct point-to-point routing</li>
                         </ul>
                     </div>
                     <!-- Auto-Adjusting Aspect Ratio Placeholder -->
-                    <div class="order-1 md:order-2 aspect-video md:aspect-square lg:aspect-video w-full overflow-hidden rounded-sm bg-slate-200">
+                    <div class="order-1 md:order-2 aspect-video md:aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gray-100 shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1616431169559-b1d556536094?q=80&w=2070&auto=format&fit=crop" alt="Direct Transport Loading" class="w-full h-full object-cover" />
                     </div>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <!-- Auto-Adjusting Aspect Ratio Placeholder -->
-                    <div class="aspect-video md:aspect-square lg:aspect-video w-full overflow-hidden rounded-sm bg-slate-200">
+                    <div class="aspect-video md:aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gray-100 shadow-2xl">
                         <img src="https://images.unsplash.com/photo-1551281434-2e90c7ce3ea3?q=80&w=2070&auto=format&fit=crop" alt="Logistics Monitoring" class="w-full h-full object-cover" />
                     </div>
                     <div>
-                        <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">Absolute Visibility</span>
+                        <div class="w-12 h-12 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
                         <h3 class="text-3xl font-bold text-brand-dark mb-4">Unbroken Chain of Custody.</h3>
-                        <p class="text-slate-600 leading-relaxed text-lg mb-6">For aerospace, medical, and legal sectors, accountability is non-negotiable. Our operations team tracks your dedicated driver via live GPS telemetry from the moment of dispatch until the digital proof of delivery is signed.</p>
-                        <ul class="space-y-3 font-medium text-brand-dark">
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Live location updates</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Instant electronic POD (ePOD)</li>
-                            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Single-driver accountability</li>
+                        <p class="text-gray-600 leading-relaxed text-lg mb-6">For aerospace, medical, and legal sectors, accountability is non-negotiable. Our operations team tracks your dedicated driver via live GPS telemetry from the moment of dispatch until the digital proof of delivery is signed.</p>
+                        <ul class="space-y-4 font-medium text-brand-dark">
+                            <li class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Live location updates available</li>
+                            <li class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Instant electronic POD (ePOD)</li>
+                            <li class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg"><svg class="w-5 h-5 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Single-driver accountability</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Industrial Sectors (Masonry/Grid Layout) -->
-        <section id="industries" class="py-24 bg-brand-dark text-white">
+        <!-- Industrial Sectors -->
+        <section id="industries" class="py-24 bg-brand-light">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                    <div class="max-w-2xl">
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Sectors We Power.</h2>
-                        <p class="text-slate-400 text-lg">We provide mission-critical logistics pipelines for heavy industry, high-tech manufacturing, and professional services across the UK.</p>
-                    </div>
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">B2B Specialization</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-brand-dark tracking-tight mb-4">Sectors We Power.</h2>
+                    <p class="text-gray-600 text-lg">Providing mission-critical logistics pipelines for heavy industry, high-tech manufacturing, and professional services.</p>
                 </div>
 
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Industry 1 -->
-                    <div class="group relative bg-slate-900 border border-slate-800 rounded-sm overflow-hidden hover:border-brand-accent transition-colors">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=2070&auto=format&fit=crop" alt="Automotive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Industry -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                        <div class="aspect-video w-full overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=2070&auto=format&fit=crop" alt="Automotive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Automotive & Plant</h3>
-                            <p class="text-slate-400 text-sm">Line-stopping component delivery. Rapid response to prevent costly manufacturing downtime.</p>
-                        </div>
-                    </div>
-                    <!-- Industry 2 -->
-                    <div class="group relative bg-slate-900 border border-slate-800 rounded-sm overflow-hidden hover:border-brand-accent transition-colors">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop" alt="Aerospace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Aviation & Aerospace</h3>
-                            <p class="text-slate-400 text-sm">AOG (Aircraft on Ground) capable logistics. High-security transport for sensitive parts.</p>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Automotive & Plant</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Line-stopping component delivery. Rapid response to prevent costly manufacturing downtime.</p>
                         </div>
                     </div>
-                    <!-- Industry 3 -->
-                    <div class="group relative bg-slate-900 border border-slate-800 rounded-sm overflow-hidden hover:border-brand-accent transition-colors">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d?q=80&w=2070&auto=format&fit=crop" alt="Medical" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <!-- Industry -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                        <div class="aspect-video w-full overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2079&auto=format&fit=crop" alt="Aerospace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Medical & Pharma</h3>
-                            <p class="text-slate-400 text-sm">Time-critical movement of laboratory samples, pharmaceutical supplies, and medical devices.</p>
-                        </div>
-                    </div>
-                    <!-- Industry 4 -->
-                    <div class="group relative bg-slate-900 border border-slate-800 rounded-sm overflow-hidden hover:border-brand-accent transition-colors">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Corporate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Legal & Financial</h3>
-                            <p class="text-slate-400 text-sm">Secure wait-and-return services for highly confidential tender documents and contracts.</p>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Aviation & Aerospace</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">AOG (Aircraft on Ground) capable logistics. High-security transport for sensitive parts.</p>
                         </div>
                     </div>
-                    <!-- Industry 5 -->
-                    <div class="group relative bg-slate-900 border border-slate-800 rounded-sm overflow-hidden hover:border-brand-accent transition-colors">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=2070&auto=format&fit=crop" alt="Events" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <!-- Industry -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow group">
+                        <div class="aspect-video w-full overflow-hidden bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d?q=80&w=2070&auto=format&fit=crop" alt="Medical" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Events & Broadcast</h3>
-                            <p class="text-slate-400 text-sm">Scheduled, hard-deadline deliveries for stage rigging, AV equipment, and exhibition stands.</p>
-                        </div>
-                    </div>
-                    <!-- Industry 6 -->
-                    <div class="group relative bg-slate-900 border border-slate-800 rounded-sm overflow-hidden hover:border-brand-accent transition-colors">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop" alt="IT Infrastructure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">IT & Telecoms</h3>
-                            <p class="text-slate-400 text-sm">Careful handling and direct transport of fragile server racks and communication infrastructure.</p>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Medical & Pharma</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Time-critical movement of laboratory samples, pharmaceutical supplies, and medical devices.</p>
                         </div>
                     </div>
                 </div>
@@ -259,71 +209,71 @@
         </section>
 
         <!-- Fleet Grid -->
-        <section id="fleet" class="py-24 bg-slate-100">
+        <section id="fleet" class="py-24 bg-brand-dark text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-5xl font-black text-brand-dark tracking-tight mb-4">Fleet Capabilities.</h2>
-                    <p class="text-slate-600 max-w-2xl mx-auto text-lg">From single envelopes to multi-pallet industrial loads, we deploy the exact vehicle your consignment requires.</p>
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">Vehicle Specifications</span>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Fleet Capabilities.</h2>
+                    <p class="text-gray-400 text-lg">From single envelopes to multi-pallet industrial loads, we deploy the exact vehicle your consignment requires.</p>
                 </div>
                 
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- Van Type -->
-                    <div class="bg-white p-8 border-t-4 border-slate-800 shadow-lg">
-                        <h3 class="text-xl font-black text-brand-dark mb-4">Small Courier Van</h3>
-                        <ul class="space-y-3 text-sm text-slate-600 mb-6 font-medium">
-                            <li class="flex justify-between border-b border-slate-100 pb-2"><span>Max Payload</span> <strong class="text-brand-dark">400 kg</strong></li>
-                            <li class="flex justify-between border-b border-slate-100 pb-2"><span>Capacity</span> <strong class="text-brand-dark">1 Pallet</strong></li>
-                            <li class="flex justify-between pb-2"><span>Internal L</span> <strong class="text-brand-dark">1.5 meters</strong></li>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-brand-accent transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-4 pb-4 border-b border-gray-800">Small Courier Van</h3>
+                        <ul class="space-y-3 text-sm text-gray-400 mb-6 font-medium">
+                            <li class="flex justify-between"><span>Max Payload</span> <strong class="text-white">400 kg</strong></li>
+                            <li class="flex justify-between"><span>Capacity</span> <strong class="text-white">1 Pallet</strong></li>
+                            <li class="flex justify-between"><span>Internal L</span> <strong class="text-white">1.5 meters</strong></li>
                         </ul>
-                        <p class="text-xs text-slate-500">Rapid urban deployment. Ideal for secure documents and loose cartons.</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">Rapid urban deployment. Ideal for secure documents and loose cartons.</p>
                     </div>
-                    <!-- Van Type -->
-                    <div class="bg-white p-8 border-t-4 border-slate-800 shadow-lg">
-                        <h3 class="text-xl font-black text-brand-dark mb-4">Medium Van (SWB)</h3>
-                        <ul class="space-y-3 text-sm text-slate-600 mb-6 font-medium">
-                            <li class="flex justify-between border-b border-slate-100 pb-2"><span>Max Payload</span> <strong class="text-brand-dark">900 kg</strong></li>
-                            <li class="flex justify-between border-b border-slate-100 pb-2"><span>Capacity</span> <strong class="text-brand-dark">2 Pallets</strong></li>
-                            <li class="flex justify-between pb-2"><span>Internal L</span> <strong class="text-brand-dark">2.4 meters</strong></li>
+                    
+                    <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-brand-accent transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-4 pb-4 border-b border-gray-800">Medium Van (SWB)</h3>
+                        <ul class="space-y-3 text-sm text-gray-400 mb-6 font-medium">
+                            <li class="flex justify-between"><span>Max Payload</span> <strong class="text-white">900 kg</strong></li>
+                            <li class="flex justify-between"><span>Capacity</span> <strong class="text-white">2 Pallets</strong></li>
+                            <li class="flex justify-between"><span>Internal L</span> <strong class="text-white">2.4 meters</strong></li>
                         </ul>
-                        <p class="text-xs text-slate-500">The industry standard. Perfect for standard B2B freight and components.</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">The industry standard. Perfect for standard B2B freight and components.</p>
                     </div>
-                    <!-- Van Type -->
-                    <div class="bg-white p-8 border-t-4 border-slate-800 shadow-lg">
-                        <h3 class="text-xl font-black text-brand-dark mb-4">Large Van (LWB)</h3>
-                        <ul class="space-y-3 text-sm text-slate-600 mb-6 font-medium">
-                            <li class="flex justify-between border-b border-slate-100 pb-2"><span>Max Payload</span> <strong class="text-brand-dark">1,200 kg</strong></li>
-                            <li class="flex justify-between border-b border-slate-100 pb-2"><span>Capacity</span> <strong class="text-brand-dark">3-4 Pallets</strong></li>
-                            <li class="flex justify-between pb-2"><span>Internal L</span> <strong class="text-brand-dark">3.3 meters</strong></li>
+
+                    <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl hover:border-brand-accent transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-4 pb-4 border-b border-gray-800">Large Van (LWB)</h3>
+                        <ul class="space-y-3 text-sm text-gray-400 mb-6 font-medium">
+                            <li class="flex justify-between"><span>Max Payload</span> <strong class="text-white">1,200 kg</strong></li>
+                            <li class="flex justify-between"><span>Capacity</span> <strong class="text-white">3-4 Pallets</strong></li>
+                            <li class="flex justify-between"><span>Internal L</span> <strong class="text-white">3.3 meters</strong></li>
                         </ul>
-                        <p class="text-xs text-slate-500">High volume transport for oversized lengths and bulk distribution.</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">High volume transport for oversized lengths and bulk distribution.</p>
                     </div>
-                    <!-- Van Type -->
-                    <div class="bg-white p-8 border-t-4 border-brand-accent shadow-lg relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-brand-accent text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3">Heavy Lift</div>
-                        <h3 class="text-xl font-black text-brand-dark mb-4">Luton Tail-Lift</h3>
-                        <ul class="space-y-3 text-sm text-slate-600 mb-6 font-medium">
-                            <li class="flex justify-between border-b border-slate-100 pb-2"><span>Max Payload</span> <strong class="text-brand-dark">1,000 kg</strong></li>
-                            <li class="flex justify-between border-b border-slate-100 pb-2"><span>Capacity</span> <strong class="text-brand-dark">6 Pallets</strong></li>
-                            <li class="flex justify-between pb-2"><span>Internal L</span> <strong class="text-brand-dark">4.0 meters</strong></li>
+
+                    <div class="bg-brand-accent p-8 rounded-2xl shadow-xl text-white">
+                        <h3 class="text-xl font-bold mb-4 pb-4 border-b border-white/20">Luton Tail-Lift</h3>
+                        <ul class="space-y-3 text-sm text-white/90 mb-6 font-medium">
+                            <li class="flex justify-between"><span>Max Payload</span> <strong class="text-white">1,000 kg</strong></li>
+                            <li class="flex justify-between"><span>Capacity</span> <strong class="text-white">6 Pallets</strong></li>
+                            <li class="flex justify-between"><span>Internal L</span> <strong class="text-white">4.0 meters</strong></li>
                         </ul>
-                        <p class="text-xs text-slate-500">Equipped with mechanical tail-lift. Essential for heavy machinery.</p>
+                        <p class="text-xs text-white/80 leading-relaxed">Equipped with mechanical tail-lift. Essential for heavy machinery and site deliveries.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Birmingham & Coverage / FAQ Split -->
-        <section id="faq" class="py-24 bg-white border-b border-slate-200">
+        <!-- Birmingham Coverage & FAQ -->
+        <section id="faq" class="py-24 bg-white border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16">
+                <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
                     
                     <!-- Left: Coverage & Map -->
                     <div>
-                        <h2 class="text-3xl font-black text-brand-dark mb-6">Midlands Based.<br/>Nationwide Reach.</h2>
-                        <p class="text-slate-600 mb-8 leading-relaxed">Strategically headquartered in Birmingham, we have immediate access to the M6, M5, and M42 corridors. This allows us to dispatch vehicles rapidly across the West Midlands and deliver anywhere in the UK mainland on the exact same day.</p>
+                        <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">Our Base</span>
+                        <h2 class="text-3xl md:text-4xl font-black text-brand-dark mb-6">Midlands Based.<br/>Nationwide Reach.</h2>
+                        <p class="text-gray-600 mb-8 leading-relaxed">Strategically headquartered in Birmingham, we have immediate access to the M6, M5, and M42 corridors. This allows us to dispatch vehicles rapidly across the West Midlands and deliver anywhere in the UK mainland on the exact same day.</p>
                         
                         <!-- Auto-Adjusting Map Placeholder -->
-                        <div class="aspect-video w-full rounded-sm overflow-hidden bg-slate-200 border border-slate-300 shadow-md">
+                        <div class="aspect-video md:aspect-[4/3] w-full rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 shadow-lg">
                             <iframe 
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155355.84594639906!2d-2.0298717833076135!3d52.49692482315802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870942d1b417173%3A0xca81fef0aeee7998!2sBirmingham!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" 
                                 width="100%" 
@@ -337,39 +287,40 @@
                     </div>
 
                     <!-- Right: Native HTML FAQ Accordion -->
-                    <div>
-                        <h2 class="text-3xl font-black text-brand-dark mb-8">Operational FAQs</h2>
+                    <div class="pt-8 lg:pt-0">
+                        <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">Information</span>
+                        <h2 class="text-3xl md:text-4xl font-black text-brand-dark mb-8">Operational FAQs</h2>
                         <div class="space-y-4">
-                            <details class="group bg-slate-50 border border-slate-200 rounded-sm p-6 open:bg-white open:shadow-md transition-all cursor-pointer" open>
+                            <details class="group bg-gray-50 border border-gray-200 rounded-xl p-6 open:bg-white open:shadow-lg transition-all cursor-pointer" open>
                                 <summary class="font-bold text-brand-dark flex justify-between items-center text-lg">
                                     How fast can you collect my freight?
-                                    <svg class="w-5 h-5 text-brand-accent group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="square" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    <svg class="w-5 h-5 text-brand-accent group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </summary>
-                                <p class="text-slate-600 mt-4 leading-relaxed font-medium">In the West Midlands and major UK cities, our target collection time is within 60 minutes of booking confirmation. Regional collections vary slightly but are always expedited.</p>
+                                <p class="text-gray-600 mt-4 leading-relaxed font-medium">In the West Midlands and major UK cities, our target collection time is within 60 minutes of booking confirmation. Regional collections vary slightly but are always prioritized for immediate dispatch.</p>
                             </details>
 
-                            <details class="group bg-slate-50 border border-slate-200 rounded-sm p-6 open:bg-white open:shadow-md transition-all cursor-pointer">
+                            <details class="group bg-gray-50 border border-gray-200 rounded-xl p-6 open:bg-white open:shadow-lg transition-all cursor-pointer">
                                 <summary class="font-bold text-brand-dark flex justify-between items-center text-lg">
                                     Are my goods insured in transit?
-                                    <svg class="w-5 h-5 text-brand-accent group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="square" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    <svg class="w-5 h-5 text-brand-accent group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </summary>
-                                <p class="text-slate-600 mt-4 leading-relaxed font-medium">Yes. Every dedicated delivery is covered by our standard Goods in Transit (GIT) insurance up to £50,000. Extended cover can be arranged for high-value assets.</p>
+                                <p class="text-gray-600 mt-4 leading-relaxed font-medium">Yes. Every dedicated delivery is automatically covered by our standard Goods in Transit (GIT) insurance. If you are shipping highly valuable technical assets, extended cover can easily be arranged.</p>
                             </details>
 
-                            <details class="group bg-slate-50 border border-slate-200 rounded-sm p-6 open:bg-white open:shadow-md transition-all cursor-pointer">
+                            <details class="group bg-gray-50 border border-gray-200 rounded-xl p-6 open:bg-white open:shadow-lg transition-all cursor-pointer">
                                 <summary class="font-bold text-brand-dark flex justify-between items-center text-lg">
-                                    Do you operate outside normal business hours?
-                                    <svg class="w-5 h-5 text-brand-accent group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="square" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    Do you operate outside normal hours?
+                                    <svg class="w-5 h-5 text-brand-accent group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </summary>
-                                <p class="text-slate-600 mt-4 leading-relaxed font-medium">Logistics does not sleep. Our dispatch team and driver network operate 24 hours a day, 7 days a week, 365 days a year.</p>
+                                <p class="text-gray-600 mt-4 leading-relaxed font-medium">Logistics does not sleep. Our dispatch team and driver network operate 24 hours a day, 7 days a week, 365 days a year to support your critical supply chain needs.</p>
                             </details>
                             
-                            <details class="group bg-slate-50 border border-slate-200 rounded-sm p-6 open:bg-white open:shadow-md transition-all cursor-pointer">
+                            <details class="group bg-gray-50 border border-gray-200 rounded-xl p-6 open:bg-white open:shadow-lg transition-all cursor-pointer">
                                 <summary class="font-bold text-brand-dark flex justify-between items-center text-lg">
                                     Will my goods be mixed with other deliveries?
-                                    <svg class="w-5 h-5 text-brand-accent group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="square" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                    <svg class="w-5 h-5 text-brand-accent group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                 </summary>
-                                <p class="text-slate-600 mt-4 leading-relaxed font-medium">Absolutely not. We operate a strict dedicated vehicle policy. Once your freight is loaded, the vehicle drives straight to your receiver with zero co-loading.</p>
+                                <p class="text-gray-600 mt-4 leading-relaxed font-medium">Absolutely not. We operate a strict dedicated vehicle policy. Once your freight is loaded, the vehicle drives straight to your receiver with zero co-loading or cross-docking.</p>
                             </details>
                         </div>
                     </div>
@@ -378,47 +329,43 @@
             </div>
         </section>
 
-        <!-- Quote Form Section (Preserved API Integration) -->
-        <section id="quote" class="py-24 bg-brand-light relative">
+        <!-- Quote Form Section -->
+        <section id="quote" class="py-24 bg-brand-light">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-brand-dark rounded-sm shadow-2xl p-6 sm:p-10 md:p-14 border-t-8 border-brand-accent relative overflow-hidden">
+                <div class="bg-white rounded-3xl shadow-xl p-8 sm:p-12 md:p-14 border border-gray-200">
                     
-                    <!-- Decorative Background element -->
-                    <div class="absolute -top-24 -right-24 w-64 h-64 bg-brand-accent opacity-10 rounded-full blur-3xl"></div>
+                    <div class="mb-10 text-center">
+                        <span class="text-brand-accent font-bold tracking-widest uppercase text-sm mb-2 block">Fast Response</span>
+                        <h2 class="text-3xl md:text-4xl font-black text-brand-dark mb-4">Initiate Urgent Transit.</h2>
+                        <p class="text-gray-500 text-lg">Enter your consignment details below for an immediate pricing structure and vehicle allocation.</p>
+                    </div>
 
-                    <div class="relative z-10">
-                        <div class="mb-10">
-                            <h2 class="text-3xl md:text-4xl font-black text-white mb-3">Initiate Urgent Transit.</h2>
-                            <p class="text-slate-400 text-lg">Enter your consignment details below for an immediate pricing structure and vehicle allocation.</p>
+                    <form class="space-y-6" id="quoteForm">
+                        <!-- Anti-Spam Honeypot (Preserved) -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" id="sk1_bot_trap" tabindex="-1" value="" autocomplete="off" />
                         </div>
 
-                        <form class="space-y-6" id="quoteForm">
-                            <!-- Anti-Spam Honeypot (Preserved) -->
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                                <input type="text" id="sk1_bot_trap" tabindex="-1" value="" autocomplete="off" />
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Collection Postcode</label>
-                                    <input type="text" id="collection" class="w-full bg-slate-900 border border-slate-700 text-white p-4 rounded-sm font-bold focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition" placeholder="e.g. B1 1AA" required maxlength="8" />
-                                    <p id="col-error" class="text-red-500 text-xs mt-2 hidden font-bold">Invalid UK Postcode format.</p>
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Delivery Postcode</label>
-                                    <input type="text" id="delivery" class="w-full bg-slate-900 border border-slate-700 text-white p-4 rounded-sm font-bold focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition" placeholder="e.g. EC1A 1BB" required maxlength="8" />
-                                    <p id="del-error" class="text-red-500 text-xs mt-2 hidden font-bold">Invalid UK Postcode format.</p>
-                                </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-brand-dark mb-2">Collection Postcode</label>
+                                <input type="text" id="collection" class="w-full bg-gray-50 border border-gray-200 text-brand-dark p-4 rounded-xl font-bold focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition shadow-sm" placeholder="e.g. B1 1AA" required maxlength="8" />
+                                <p id="col-error" class="text-red-500 text-xs mt-2 hidden font-bold">Invalid UK Postcode format.</p>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Consignment Details (Weight / Dims)</label>
-                                <textarea id="cargo" class="w-full bg-slate-900 border border-slate-700 text-white p-4 rounded-sm font-medium focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition h-28" placeholder="e.g. 1 x Standard Pallet, 450kg total. Automotive parts." required></textarea>
+                                <label class="block text-sm font-bold text-brand-dark mb-2">Delivery Postcode</label>
+                                <input type="text" id="delivery" class="w-full bg-gray-50 border border-gray-200 text-brand-dark p-4 rounded-xl font-bold focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition shadow-sm" placeholder="e.g. EC1A 1BB" required maxlength="8" />
+                                <p id="del-error" class="text-red-500 text-xs mt-2 hidden font-bold">Invalid UK Postcode format.</p>
                             </div>
-                            <button type="submit" id="submitBtn" class="w-full bg-brand-accent hover:bg-brand-accentHover text-white font-black text-lg py-5 rounded-sm transition-all shadow-[0_0_15px_rgba(234,88,12,0.4)] flex justify-center items-center gap-2 uppercase tracking-wide">
-                                Submit Request to Dispatch
-                            </button>
-                        </form>
-                    </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-brand-dark mb-2">Consignment Details (Weight / Dims)</label>
+                            <textarea id="cargo" class="w-full bg-gray-50 border border-gray-200 text-brand-dark p-4 rounded-xl font-medium focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition h-32 shadow-sm resize-none" placeholder="e.g. 1 x Standard Pallet, 450kg total. Automotive parts." required></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="w-full bg-brand-accent hover:bg-brand-accentHover text-white font-black text-lg py-5 rounded-xl transition-all shadow-lg shadow-brand-accent/30 flex justify-center items-center gap-2 uppercase tracking-wide">
+                            Submit Request to Dispatch
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -498,20 +445,22 @@
     </main>
 
     <!-- Professional Footer -->
-    <footer class="bg-brand-dark pt-16 pb-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 text-slate-400 mb-12">
+    <footer class="bg-brand-dark pt-16 pb-8 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 text-gray-400 mb-12">
             
             <!-- Brand Column -->
             <div class="md:col-span-4">
-                <a href="/" class="text-2xl font-black tracking-tighter text-white block mb-4 uppercase">SK1<span class="text-brand-accent">Express</span></a>
+                <a href="/" class="text-2xl font-black tracking-tight text-white block mb-4">
+                    sk1express <span class="text-brand-accent font-bold text-lg">Ltd</span>
+                </a>
                 <p class="text-sm leading-relaxed mb-6 font-medium">Precision B2B logistics engineered for reliability. Operating out of Birmingham, servicing the entire UK mainland with dedicated vehicles.</p>
-                <div class="flex items-center gap-2 text-white font-bold">
-                    <span class="w-2 h-2 bg-green-500 rounded-full"></span> 24/7 Operations Active
+                <div class="flex items-center gap-2 text-white font-bold text-sm">
+                    <span class="w-2 h-2 bg-brand-accent rounded-full"></span> 24/7 Operations Active
                 </div>
             </div>
 
             <!-- Links Column -->
-            <div class="md:col-span-4">
+            <div class="md:col-span-4 lg:col-span-3 lg:col-start-6">
                 <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Logistics Links</h4>
                 <ul class="space-y-3 text-sm font-medium">
                     <li><a href="#solutions" class="hover:text-brand-accent transition-colors">Dedicated Solutions</a></li>
@@ -522,27 +471,27 @@
             </div>
 
             <!-- Contact Column -->
-            <div class="md:col-span-4 bg-slate-900 border border-slate-800 p-6 rounded-sm">
-                <h4 class="text-white font-bold uppercase tracking-wider mb-4 text-sm">Direct Dispatch</h4>
+            <div class="md:col-span-4 lg:col-span-4">
+                <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-sm">Direct Dispatch</h4>
                 <ul class="space-y-4 text-sm font-medium">
                     <li>
-                        <span class="block text-xs text-slate-500 mb-1 uppercase tracking-widest">Phone</span>
+                        <span class="block text-xs text-gray-500 mb-1 uppercase tracking-widest">Phone</span>
                         <a href="tel:+441210000000" class="text-white text-lg font-bold hover:text-brand-accent transition-colors">0121 000 0000</a>
                     </li>
                     <li>
-                        <span class="block text-xs text-slate-500 mb-1 uppercase tracking-widest">Email</span>
+                        <span class="block text-xs text-gray-500 mb-1 uppercase tracking-widest">Email</span>
                         <a href="mailto:dispatch@sk1express.uk" class="text-white hover:text-brand-accent transition-colors">dispatch@sk1express.uk</a>
                     </li>
                     <li>
-                        <span class="block text-xs text-slate-500 mb-1 uppercase tracking-widest">HQ</span>
+                        <span class="block text-xs text-gray-500 mb-1 uppercase tracking-widest">HQ</span>
                         <span class="text-white">Birmingham, West Midlands</span>
                     </li>
                 </ul>
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-t border-slate-800 pt-8 text-xs text-slate-500 font-medium">
-            <p>&copy; 2026 SK1 Express Logistics. All rights reserved. | Built for demanding supply chains.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center border-t border-gray-800 pt-8 text-xs text-gray-500 font-medium">
+            <p>&copy; 2026 sk1express Ltd. All rights reserved. | Built for demanding supply chains.</p>
         </div>
     </footer>
 </body>
